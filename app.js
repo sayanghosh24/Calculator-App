@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const background = document.querySelector('.background');
-    const symbols = ['+', '-', '*', '/', '=', '%', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'log', 'cos', 'θ', 'Sayan'];
+    const symbols = ['+', '-', '*', '/', '=', '%'];
     for (let i = 0; i < 100; i++) {
         const symbol = document.createElement('div');
         symbol.className = 'math-symbol';
