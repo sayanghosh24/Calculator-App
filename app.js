@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let arr = Array.from(buttons);
     arr.forEach(button => {
         button.addEventListener('click', (e) => {
-            if (e.target.innerHTML == '=') {
+            const value = e.target.innerHTML;
+            if (value == '=') {
                 try {
                     string = eval(string);
                     input.value = string;
@@ -14,29 +15,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     input.value = "Error";
                     string = "";
                 }
-            } else if (e.target.innerHTML == 'AC') {
+            } else if (value == 'AC') {
                 string = "";
                 input.value = string;
-            } else if (e.target.innerHTML == 'DEL') {
+            } else if (value == 'DEL') {
                 string = string.substring(0, string.length - 1);
                 input.value = string;
+            } else if (value == 'sin' || value == 'cos' || value == 'tan' || value == '√' || value == 'log') {
+                string = input.value;  // get the current input value for operations
+                switch (value) {
+                    case 'sin':
+                        string = Math.sin(parseFloat(string));
+                        break;
+                    case 'cos':
+                        string = Math.cos(parseFloat(string));
+                        break;
+                    case 'tan':
+                        string = Math.tan(parseFloat(string));
+                        break;
+                    case 'log':
+                        string = Math.log10(parseFloat(string));  // base-10 logarithm
+                        break;
+                    case '√':
+                        string = Math.sqrt(parseFloat(string));
+                        break;
+                }
+                input.value = string;
             } else {
-                string += e.target.innerHTML;
+                string += value;
                 input.value = string;
             }
         });
     });
-
-    const background = document.querySelector('.background');
-    for (let i = 0; i < 100; i++) {
-        const symbol = document.createElement('div');
-        symbol.className = 'math-symbol';
-        symbol.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-        symbol.style.left = Math.random() * 100 + 'vw';
-        symbol.style.top = Math.random() * 100 + 'vh';
-        symbol.style.fontSize = (Math.random() * 20 + 10) + 'px';
-        symbol.style.transform = `rotate(${Math.random() * 360}deg)`;
-        background.appendChild(symbol);
-    }
 });
-
