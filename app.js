@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const background = document.querySelector('.background');
-    const symbols = ['+', '-', '*', '/', '=', '%'];
     for (let i = 0; i < 100; i++) {
         const symbol = document.createElement('div');
         symbol.className = 'math-symbol';
@@ -40,3 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
         background.appendChild(symbol);
     }
 });
+
