@@ -91,21 +91,3 @@ button:active {
   display: flex;
   justify-content: space-between;
 }
-
-/* @keyframes changeBackground {
-  0% {
-    background: linear-gradient(40deg, #294f41, #3d1a1a98);
-  }
-
-  33% {
-    background: linear-gradient(40deg, #512222a8, #20211f);
-  }
-
-  66% {
-    background: linear-gradient(40deg, #b6cba1, #356856);
-  }
-
-  100% {
-    background: linear-gradient(40deg, #356856, #51222298);
-  }
-} */
